@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RutasActivasGuard } from './service/rutas-activas.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [RutasActivasGuard]
   },
   {
     path: '',
@@ -13,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'presupuesto',
-    loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
+    loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule),
+    canActivate: [RutasActivasGuard]
   },
   {
     path: 'alumnos',
@@ -34,6 +37,18 @@ const routes: Routes = [
   {
     path: 'detalle-pelicula',
     loadChildren: () => import('./detalle-pelicula/detalle-pelicula.module').then( m => m.DetallePeliculaPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
   },
 ];
 
