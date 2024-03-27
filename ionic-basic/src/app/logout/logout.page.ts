@@ -7,7 +7,6 @@ import { AutenticacionFirebaseService } from '../service/autenticacion-firebase.
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.page.html',
-  styleUrls: ['./logout.page.scss'],
 })
 export class LogoutPage implements OnInit {
 

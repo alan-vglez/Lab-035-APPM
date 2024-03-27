@@ -9,7 +9,6 @@ import { onAuthStateChanged } from 'firebase/auth';
 @Component({
   selector: 'app-float-menu',
   templateUrl: './float-menu.component.html',
-  styleUrls: ['./float-menu.component.scss'],
 })
 export class FloatMenuComponent  implements OnInit {
 
